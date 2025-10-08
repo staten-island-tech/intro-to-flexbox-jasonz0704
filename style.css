@@ -34,7 +34,7 @@ p {
   font-weight: bold;
   padding: 5px;
 }
-h1 {
+.title {
   font-size: 85px;
   margin: 10px auto;
   color: black;
@@ -63,4 +63,10 @@ h3 {
 }
 h3:hover {
   background-color: darkgreen;
+}
+.sorter {
+  margin-bottom: 20px;
+  width: 900px;
+  height: 400px;
+  background-color: red;
 }
