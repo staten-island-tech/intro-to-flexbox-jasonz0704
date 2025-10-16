@@ -126,7 +126,7 @@ function inject(item) {
   container.insertAdjacentHTML(
     "afterbegin",
     `<div class="card">
-        <div class= "name">${item.name}</div>
+        <h2 class= "name">${item.name}</h2>
         <image class= "image" src=${item.image} alt=${item.name}>
         <div class= "price">$${item.price}</div>
         <button class= "button">Add to Cart</button>
@@ -134,3 +134,18 @@ function inject(item) {
   );
 }
 item.forEach((item) => inject(item));
+
+function getCards() {
+  const buttons = document.querySelectorAll(".button");
+  const btnArr = Array.from(buttons);
+
+  btnArr.forEach((button) =>
+    button.addEventListener("click", function (event) {
+      console.log(
+        event.target.closest(".card").getAttribute(".name"),
+        event.target.textContent
+      );
+    })
+  );
+}
+getCards();
