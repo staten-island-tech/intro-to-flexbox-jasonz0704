@@ -6,7 +6,7 @@ const item = [
       "https://images.prismic.io/carwow/90e9efa2-baf6-496f-abd1-529f138557d1_lamborghini-huracan-2023-frontdynamic1.JPG?auto=format&cs=tinysrgb&fit=max&q=60",
   },
   {
-    name: "Porshe GT3 RS",
+    name: "Porsche GT3 RS",
     price: 250000,
     image:
       "https://www.goodwood.com/globalassets/.road--racing/road/news/2023/12-december/coty/gt3-rs/porsche-911-gt3-rs-goodwood-cars-of-the-year-2023-53.jpg?rxy=0.5,0.5",
@@ -125,7 +125,8 @@ function inject(item) {
   const container = document.querySelector(".container");
   container.insertAdjacentHTML(
     "afterbegin",
-    `<div class="card" data-name=${item.name}>
+    `<div class="card" data-name=${item.name}
+     data-price=${item.price}>
         <h2 class= "name">${item.name}</h2>
         <image class= "image" src=${item.image} alt=${item.name}>
         <div class= "price">$${item.price}</div>
@@ -141,8 +142,21 @@ function getCards() {
 
   btnArr.forEach((button) =>
     button.addEventListener("click", function (event) {
-      console.log(event.target.closest(".card").getAttribute("data-name"));
+      console.log(event.target.closest(".card").getAttribute("data-price"));
     })
   );
 }
 getCards();
+
+/* function filterByPrice(price) {
+  const cards = document.querySelectorAll(".card");
+  cards.forEach((card) => {
+    const cardCategory = card.getAttribute("data-price");
+    if (cardCategory === price) {
+      card.style.display = "flex";
+    } else {
+      card.style.display = "none";
+    }
+  });
+}
+filterByPrice(""); */
