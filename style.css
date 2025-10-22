@@ -1,11 +1,10 @@
 body {
-  background-color: gray;
-  display: flex;
+  background-color: rgb(31, 43, 58);
   font-family: Arial, sans-serif;
 }
 
 .card {
-  background-color: white;
+  background-color: rgb(255, 255, 255);
   width: 550px;
   height: 450px;
   margin: 20px;
@@ -15,6 +14,7 @@ body {
   border: 2px solid black;
   border-radius: 10px;
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+  color: black;
 }
 
 .container {
@@ -45,7 +45,7 @@ body {
   margin-top: 15px;
 }
 
-.button {
+.cartbutton {
   height: 50px;
   width: 150px;
   background-color: green;
@@ -57,7 +57,7 @@ body {
   font-size: 18px;
   margin-top: 15px;
 }
-.button:hover {
+.cartbutton:hover {
   background-color: darkgreen;
 }
 
@@ -65,10 +65,15 @@ body {
   background-color: white;
   width: 1000px;
   height: 300px;
-  margin: 20px;
+  margin: 20px auto;
   text-align: center;
   font-size: 24px;
   padding: 10px;
-  border: 2px solid black;
   border-radius: 10px;
+}
+
+.header {
+  text-align: center;
+  margin: 20px;
+  color: white;
 }

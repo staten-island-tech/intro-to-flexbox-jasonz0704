@@ -130,14 +130,15 @@ function inject(item) {
         <h2 class= "name">${item.name}</h2>
         <image class= "image" src=${item.image} alt=${item.name}>
         <div class= "price">$${item.price}</div>
-        <button class= "button">Add to Cart</button>
+        <button class= "cartbutton">Add to Cart</button>
         </div>`
   );
 }
+
 item.forEach((item) => inject(item));
 
-function getCards() {
-  const buttons = document.querySelectorAll(".button");
+/* function getCards() {
+  const buttons = document.querySelectorAll(".cartbutton");
   const btnArr = Array.from(buttons);
 
   btnArr.forEach((button) =>
@@ -146,17 +147,44 @@ function getCards() {
     })
   );
 }
-getCards();
+getCards(); */
 
 /* function filterByPrice(price) {
   const cards = document.querySelectorAll(".card");
   cards.forEach((card) => {
-    const cardCategory = card.getAttribute("data-price");
+    const cardCategory = card.getAttribute("filter");
     if (cardCategory === price) {
       card.style.display = "flex";
     } else {
       card.style.display = "none";
     }
   });
+} */
+
+/* function filterByPrice(price) {
+  console.log(price);
+  const cards = document.querySelectorAll(".card");
+  cards.forEach((card) => {
+    const dataprice = card.getAttribute("data-price");
+    if (price === "Below 500k" && dataprice < 500000) {
+      card.style.display = "flex";
+    } else if (
+      price === "500k- 1M" &&
+      dataprice >= 500000 &&
+      dataprice <= 1000000
+    ) {
+      card.style.display = "flex";
+    } else if (
+      price === "1M - 1.5M" &&
+      dataprice > 1000000 &&
+      dataprice <= 1500000
+    ) {
+      card.style.display = "flex";
+    } else if (price === "Above 1.5M" && dataprice > 1500000) {
+      card.style.display = "flex";
+    } else {
+      card.style.display = "none";
+    }
+  });
 }
-filterByPrice(""); */
+ */
