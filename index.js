@@ -125,7 +125,7 @@ function inject(item) {
   const container = document.querySelector(".container");
   container.insertAdjacentHTML(
     "afterbegin",
-    `<div class="card" data-name=${item.name}
+    `<div class="card" data-name=${item.name} data-price=${item.price}
      data-price=${item.price}>
         <h2 class= "name">${item.name}</h2>
         <image class= "image" src=${item.image} alt=${item.name}>
@@ -137,54 +137,30 @@ function inject(item) {
 
 item.forEach((item) => inject(item));
 
-/* function getCards() {
+function getCards() {
   const buttons = document.querySelectorAll(".cartbutton");
   const btnArr = Array.from(buttons);
 
   btnArr.forEach((button) =>
     button.addEventListener("click", function (event) {
-      console.log(event.target.closest(".card").getAttribute("data-price"));
+      cart.push(
+        event.target.closest(".card").getAttribute("data-name") + "",
+        event.target.closest(".card").getAttribute("data-price")
+      );
     })
   );
 }
-getCards(); */
+getCards();
 
-/* function filterByPrice(price) {
+function filterByPrice(price) {
   const cards = document.querySelectorAll(".card");
   cards.forEach((card) => {
-    const cardCategory = card.getAttribute("filter");
-    if (cardCategory === price) {
-      card.style.display = "flex";
-    } else {
-      card.style.display = "none";
-    }
-  });
-} */
+    const cardCategory = card.getAttribute("data-price");
 
-/* function filterByPrice(price) {
-  console.log(price);
-  const cards = document.querySelectorAll(".card");
-  cards.forEach((card) => {
-    const dataprice = card.getAttribute("data-price");
-    if (price === "Below 500k" && dataprice < 500000) {
-      card.style.display = "flex";
-    } else if (
-      price === "500k- 1M" &&
-      dataprice >= 500000 &&
-      dataprice <= 1000000
-    ) {
-      card.style.display = "flex";
-    } else if (
-      price === "1M - 1.5M" &&
-      dataprice > 1000000 &&
-      dataprice <= 1500000
-    ) {
-      card.style.display = "flex";
-    } else if (price === "Above 1.5M" && dataprice > 1500000) {
+    if (cardCategory < Number(price)) {
       card.style.display = "flex";
     } else {
       card.style.display = "none";
     }
   });
 }
- */
