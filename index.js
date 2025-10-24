@@ -152,7 +152,7 @@ function getCards() {
 }
 getCards();
 
-function filterByPrice(price) {
+/* function filterByPrice(price) {
   const cards = document.querySelectorAll(".card");
   cards.forEach((card) => {
     const cardCategory = card.getAttribute("data-price");
@@ -163,4 +163,23 @@ function filterByPrice(price) {
       card.style.display = "none";
     }
   });
+} */
+
+function filterByPrice(catagory) {
+  const cards = document.querySelectorAll(".card");
+  cards.forEach((card) => {
+    const cardCategory = card.getAttribute("data-price");
+    if (cardCategory < 500000) {
+      card = "Below 500k";
+    } else if (cardCategory > 500000 && cardCategory < 1000000) {
+      card = "500k - 1M";
+    } else if (cardCategory > 1000000 && cardCategory < 1500000) {
+      card = "1M - 1.5M";
+    } else if (cardCategory > 1500000) {
+      card = "Above 1.5M";
+    }
+  });
 }
+filterByPrice();
+
+const filterButtons = document.querySelectorAll(".filterbutton")
