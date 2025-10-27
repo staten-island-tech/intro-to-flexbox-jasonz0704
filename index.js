@@ -136,7 +136,7 @@ function inject(item) {
 }
 
 item.forEach((item) => inject(item));
-
+/* 
 function getCards() {
   const buttons = document.querySelectorAll(".cartbutton");
   const btnArr = Array.from(buttons);
@@ -150,36 +150,50 @@ function getCards() {
     })
   );
 }
-getCards();
+getCards(); */
 
-/* function filterByPrice(price) {
+function filterByPrice(price) {
   const cards = document.querySelectorAll(".card");
   cards.forEach((card) => {
     const cardCategory = card.getAttribute("data-price");
 
-    if (cardCategory < Number(price)) {
-      card.style.display = "flex";
+    if (cardCategory = .data-class) {
+      card.display = "flex";
     } else {
       card.style.display = "none";
     }
   });
-} */
-
+}
+filterByPrice(500000);
+/* 
 function filterByPrice(catagory) {
   const cards = document.querySelectorAll(".card");
   cards.forEach((card) => {
     const cardCategory = card.getAttribute("data-price");
     if (cardCategory < 500000) {
-      card = "Below 500k";
+      catagory = "Below 500k";
     } else if (cardCategory > 500000 && cardCategory < 1000000) {
-      card = "500k - 1M";
+      catagory = "500k - 1M";
     } else if (cardCategory > 1000000 && cardCategory < 1500000) {
-      card = "1M - 1.5M";
+      catagory = "1M - 1.5M";
     } else if (cardCategory > 1500000) {
-      card = "Above 1.5M";
+      catagory = "Above 1.5M";
     }
   });
 }
-filterByPrice();
+console.log = filterByPrice("Below 500k"); */
 
-const filterButtons = document.querySelectorAll(".filterbutton")
+/* function showcards(dataclass) {
+  const filterButtons = document.querySelectorAll(".filterbutton");
+  filterButtons.forEach((filterbutton) => {
+    filterbutton.addEventListener("click", () => {
+      if (( = catagory)) {
+        card.style.display = "flex";
+      } else {
+        card.style.display = "none";
+      }
+    });
+  });
+}
+showcards();
+ */
