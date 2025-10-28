@@ -153,11 +153,17 @@ function getCards() {
 getCards(); */
 
 function filterByPrice(price) {
+  const filterbuttons = document.querySelectorAll(".filterbutton");
+  filterbuttons.forEach((filterbutton) => {
+    const cardcatagory = filterbutton.getAttribute("data-class");
+    
+  }
+)
   const cards = document.querySelectorAll(".card");
   cards.forEach((card) => {
     const cardCategory = card.getAttribute("data-price");
 
-    if (cardCategory = .data-class) {
+    if ((cardCategory = filterbutton.data.class)) {
       card.display = "flex";
     } else {
       card.style.display = "none";
