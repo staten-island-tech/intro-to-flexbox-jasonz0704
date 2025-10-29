@@ -1,5 +1,11 @@
 const item = [
   {
+    name: "WhalenTruck-067",
+    price: 6700000,
+    image:
+      "https://i.ytimg.com/vi/EFdeBuYXyeo/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLDdfgj6IWqE2dueSeIJpwUqPU52fw",
+  },
+  {
     name: "Lamborghini Huracan",
     price: 340000,
     image:
@@ -113,12 +119,6 @@ const item = [
     image:
       "https://www.moveelectric.com/sites/default/files/styles/slideshow_slide/public/2024-08/00-Rimac%20Nevera%20R-Rimac_2.jpg?itok=nGoedCq8",
   },
-  {
-    name: "WhalenTruck-067",
-    price: 6700000,
-    image:
-      "https://i.ytimg.com/vi/EFdeBuYXyeo/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLDdfgj6IWqE2dueSeIJpwUqPU52fw",
-  },
 ];
 
 function inject(item) {
@@ -134,8 +134,42 @@ function inject(item) {
         </div>`
   );
 }
-
 item.forEach((item) => inject(item));
+
+function filterByPrice(catagory) {
+  const cards = document.querySelectorAll(".card");
+  cards.forEach((card) => {
+    const cardCategory = card.getAttribute("data-price");
+    if (cardCategory < 500000) {
+      catagory = "Below 500k";
+    } else if (cardCategory > 500000 && cardCategory < 1000000) {
+      catagory = "500k - 1M";
+    } else if (cardCategory > 1000000 && cardCategory < 1500000) {
+      catagory = "1M - 1.5M";
+    } else if (cardCategory > 1500000) {
+      catagory = "Above 1.5M";
+    }
+  });
+}
+
+function showcards(dataclass) {
+  const filterbuttons = document.querySelectorAll(".filterbutton");
+  filterButtons.forEach((filterbutton) => {
+    filterbutton.addEventListener("click", 
+      if (( = catagory)) {
+        card.style.display = "flex";
+      } else {
+        card.style.display = "none";
+      }
+    )});
+  };
+showcards();
+
+
+
+
+//SCRAP
+
 /* 
 function getCards() {
   const buttons = document.querySelectorAll(".cartbutton");
@@ -152,13 +186,11 @@ function getCards() {
 }
 getCards(); */
 
-function filterByPrice(price) {
+/* function filterByPrice(price) {
   const filterbuttons = document.querySelectorAll(".filterbutton");
   filterbuttons.forEach((filterbutton) => {
     const cardcatagory = filterbutton.getAttribute("data-class");
-    
-  }
-)
+  });
   const cards = document.querySelectorAll(".card");
   cards.forEach((card) => {
     const cardCategory = card.getAttribute("data-price");
@@ -171,35 +203,4 @@ function filterByPrice(price) {
   });
 }
 filterByPrice(500000);
-/* 
-function filterByPrice(catagory) {
-  const cards = document.querySelectorAll(".card");
-  cards.forEach((card) => {
-    const cardCategory = card.getAttribute("data-price");
-    if (cardCategory < 500000) {
-      catagory = "Below 500k";
-    } else if (cardCategory > 500000 && cardCategory < 1000000) {
-      catagory = "500k - 1M";
-    } else if (cardCategory > 1000000 && cardCategory < 1500000) {
-      catagory = "1M - 1.5M";
-    } else if (cardCategory > 1500000) {
-      catagory = "Above 1.5M";
-    }
-  });
-}
-console.log = filterByPrice("Below 500k"); */
-
-/* function showcards(dataclass) {
-  const filterButtons = document.querySelectorAll(".filterbutton");
-  filterButtons.forEach((filterbutton) => {
-    filterbutton.addEventListener("click", () => {
-      if (( = catagory)) {
-        card.style.display = "flex";
-      } else {
-        card.style.display = "none";
-      }
-    });
-  });
-}
-showcards();
- */
+*/
