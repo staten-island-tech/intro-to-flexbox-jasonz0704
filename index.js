@@ -136,37 +136,30 @@ function inject(item) {
 }
 item.forEach((item) => inject(item));
 
-function filterByPrice(catagory) {
+function filterByPrice(dataclass) {
   const cards = document.querySelectorAll(".card");
   cards.forEach((card) => {
     const cardCategory = card.getAttribute("data-price");
     if (cardCategory < 500000) {
-      catagory = "Below 500k";
+      ("Below 500k");
     } else if (cardCategory > 500000 && cardCategory < 1000000) {
-      catagory = "500k - 1M";
+      ("500k - 1M");
     } else if (cardCategory > 1000000 && cardCategory < 1500000) {
-      catagory = "1M - 1.5M";
+      ("1M - 1.5M");
     } else if (cardCategory > 1500000) {
-      catagory = "Above 1.5M";
+      ("Above 1.5M");
     }
   });
 }
 
-function showcards(dataclass) {
-  const filterbuttons = document.querySelectorAll(".filterbutton");
-  filterButtons.forEach((filterbutton) => {
-    filterbutton.addEventListener("click", 
-      if (( = catagory)) {
-        card.style.display = "flex";
-      } else {
-        card.style.display = "none";
-      }
-    )});
-  };
-showcards();
-
-
-
+const filterButtons = document.querySelectorAll(".filterbutton");
+filterButtons.forEach((filterbutton) => {
+  filterbutton.addEventListener("click", () => {
+    const minimum = filterbutton.dataset.min;
+    filterByPrice(dataclass);
+    console.log(dataclass);
+  });
+});
 
 //SCRAP
 
