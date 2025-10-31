@@ -1,11 +1,5 @@
 const item = [
   {
-    name: "WhalenTruck-067",
-    price: 6700000,
-    image:
-      "https://i.ytimg.com/vi/EFdeBuYXyeo/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLDdfgj6IWqE2dueSeIJpwUqPU52fw",
-  },
-  {
     name: "Lamborghini Huracan",
     price: 340000,
     image:
@@ -96,6 +90,12 @@ const item = [
       "https://www.topgear.com/sites/default/files/cars-car/carousel/2021/05/dsc08261.jpg",
   },
   {
+    name: "WhalenTruck",
+    price: 6700000,
+    image:
+      "https://i.ytimg.com/vi/EFdeBuYXyeo/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLDdfgj6IWqE2dueSeIJpwUqPU52fw",
+  },
+  {
     name: "Aston Martin Valkyrie",
     price: 3450000,
     image:
@@ -136,64 +136,39 @@ function inject(item) {
 }
 item.forEach((item) => inject(item));
 
-function filterByPrice(dataclass) {
-  const cards = document.querySelectorAll(".card");
-  cards.forEach((card) => {
-    const cardCategory = card.getAttribute("data-price");
-    if (cardCategory < 500000) {
-      ("Below 500k");
-    } else if (cardCategory > 500000 && cardCategory < 1000000) {
-      ("500k - 1M");
-    } else if (cardCategory > 1000000 && cardCategory < 1500000) {
-      ("1M - 1.5M");
-    } else if (cardCategory > 1500000) {
-      ("Above 1.5M");
-    }
-  });
-}
-
 const filterButtons = document.querySelectorAll(".filterbutton");
 filterButtons.forEach((filterbutton) => {
   filterbutton.addEventListener("click", () => {
     const minimum = filterbutton.dataset.min;
-    filterByPrice(dataclass);
-    console.log(dataclass);
+    const maximum = filterbutton.dataset.max;
+    filterByPrice(minimum, maximum);
   });
 });
 
-//SCRAP
-
-/* 
-function getCards() {
-  const buttons = document.querySelectorAll(".cartbutton");
-  const btnArr = Array.from(buttons);
-
-  btnArr.forEach((button) =>
-    button.addEventListener("click", function (event) {
-      cart.push(
-        event.target.closest(".card").getAttribute("data-name") + "",
-        event.target.closest(".card").getAttribute("data-price")
-      );
-    })
-  );
-}
-getCards(); */
-
-/* function filterByPrice(price) {
-  const filterbuttons = document.querySelectorAll(".filterbutton");
-  filterbuttons.forEach((filterbutton) => {
-    const cardcatagory = filterbutton.getAttribute("data-class");
-  });
+function filterByPrice(minimum, maximum) {
   const cards = document.querySelectorAll(".card");
   cards.forEach((card) => {
-    const cardCategory = card.getAttribute("data-price");
-
-    if ((cardCategory = filterbutton.data.class)) {
-      card.display = "flex";
+    const price = Number(card.getAttribute("data-price"));
+    if (minimum < price && maximum > price) {
+      card.style.display = "flex";
     } else {
       card.style.display = "none";
     }
   });
 }
-filterByPrice(500000);
-*/
+
+function findNamePrice(name, value) {
+  const cards = document.querySelectorAll(".card");
+  cards.forEach((card) => {
+    const name = card.getAttribute("data-name");
+    const value = Number(card.getAttribute("data-price"));
+    cartitems.push(name + value);
+  });
+}
+
+const cartbuttons = document.querySelectorAll(".cartbutton");
+cartbuttons.forEach((cartbutton) => {
+  cartbutton.addEventListener("click", () => {
+    findNamePrice(name, price);
+  });
+});
