@@ -157,11 +157,9 @@ function filterByPrice(minimum, maximum) {
   });
 }
 
-function findNamePrice(name, value) {
+function addToCart(name, value) {
   const cards = document.querySelectorAll(".card");
   cards.forEach((card) => {
-    const name = card.getAttribute("data-name");
-    const value = Number(card.getAttribute("data-price"));
     cartitems.push(name + value);
   });
 }
@@ -169,6 +167,8 @@ function findNamePrice(name, value) {
 const cartbuttons = document.querySelectorAll(".cartbutton");
 cartbuttons.forEach((cartbutton) => {
   cartbutton.addEventListener("click", () => {
-    findNamePrice(name, price);
+    const name = card.getAttribute("data-name");
+    const value = Number(card.getAttribute("data-price"));
+    findNamePrice(name, value);
   });
 });
