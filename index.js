@@ -174,9 +174,5 @@ cartbuttons.forEach((cartbutton) => {
 });
 
 function updateCart() {
-  cartitems.forEach((item) => {
-    const list =
-
-  }
+  console.log(cartitems);
 }
-
