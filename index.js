@@ -157,18 +157,26 @@ function filterByPrice(minimum, maximum) {
   });
 }
 
-function addToCart(name, value) {
-  const cards = document.querySelectorAll(".card");
-  cards.forEach((card) => {
-    cartitems.push(name + value);
-  });
-}
+const cartitems = [];
 
 const cartbuttons = document.querySelectorAll(".cartbutton");
 cartbuttons.forEach((cartbutton) => {
   cartbutton.addEventListener("click", () => {
+    const card = cartbutton.closest(".card");
+
     const name = card.getAttribute("data-name");
     const value = Number(card.getAttribute("data-price"));
-    findNamePrice(name, value);
+    console.log(name, value);
+
+    cartitems.push({ name, value });
+    updateCart();
   });
 });
+
+function updateCart() {
+  cartitems.forEach((item) => {
+    const list =
+
+  }
+}
+

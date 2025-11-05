@@ -78,7 +78,12 @@ body {
   color: white;
 }
 
-.cartitems {
+.cart-item {
   color: black;
   font-size: 30px;
+}
+
+.cart-total {
+  color: green;
+  font-size: 40px;
 }

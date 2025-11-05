@@ -8,18 +8,29 @@
   <div class="header">
     <h1>Welcome to the Car Shop!</h1>
   </div>
-  
-  <button class="filterbutton" data-min = '0' data-max = '500000' >Below 500k</button>
-  <button class="filterbutton" data-min = '500000' data-max = '1000000'>500k - 1M</button>
-  <button class="filterbutton" data-min = '1000000' data-max = '1500000'>1M - 1.5M</button>
-  <button class="filterbutton" data-min = '1500000' data-max = '5000000'>Above 1.5M</button>
+
+  <button class="filterbutton" data-min="0" data-max="500000">
+    Below 500k
+  </button>
+  <button class="filterbutton" data-min="500000" data-max="1000000">
+    500k - 1M
+  </button>
+  <button class="filterbutton" data-min="1000000" data-max="1500000">
+    1M - 1.5M
+  </button>
+  <button class="filterbutton" data-min="1500000" data-max="5000000">
+    Above 1.5M
+  </button>
 
   <body>
     <div class="container"></div>
+
     <div class="cart">
       <h2>Shopping Cart</h2>
-      <div class="cartitems">
-      </div>
+      <ul class="cart-item"></ul>
+      <p>Total: <div class="cart-total">$</div></p>
+    </div>
+
     <script src="index.js"></script>
   </body>
 </html>
