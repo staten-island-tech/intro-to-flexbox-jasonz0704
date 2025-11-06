@@ -175,4 +175,5 @@ cartbuttons.forEach((cartbutton) => {
 
 function updateCart() {
   console.log(cartitems);
+  cartbuttons.insertAdjacentHTML("after");
 }
